@@ -27,6 +27,10 @@ class FamousSection extends Component {
         ...this.state.people,
         this.state.famousPerson, //entered employee
       ],
+      famousPerson: {
+        name: '',
+        role: '',
+      },
     });
   };
 
@@ -47,11 +51,13 @@ class FamousSection extends Component {
           <input
             id="name-input"
             onChange={(event) => this.handleChangeFor(event, 'name')}
+            value={this.state.famousPerson.name}
           />
           <label htmlFor="role-input">Famous for:</label>
           <input
             id="role-input"
             onChange={(event) => this.handleChangeFor(event, 'role')}
+            value={this.state.famousPerson.role}
           />
           <button type="submit">Done</button>
         </form>
