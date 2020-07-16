@@ -7,7 +7,7 @@ class FamousSection extends Component {
       name: '',
       role: '',
     },
-    famousPersonList: [],
+    people: [],
   };
 
   handleChangeFor = (event, propertyName) => {
@@ -23,24 +23,22 @@ class FamousSection extends Component {
     event.preventDefault();
     console.log(`The famous person is `, this.state.famousPerson);
     this.setState({
-      famousPersonList: [
-        ...this.state.famousPersonList,
+      people: [
+        ...this.state.people,
         this.state.famousPerson, //entered employee
       ],
     });
   };
 
   render() {
-    const displayedFamousPeople = this.state.famousPersonList.map(
-      (item, index) => {
-        return (
-          <div key={index}>
-            <h4>{item.name}</h4>
-            <p>Role: {item.role}</p>
-          </div>
-        );
-      }
-    );
+    const displayedFamousPeople = this.state.people.map((item, index) => {
+      return (
+        <div key={index}>
+          <h4>{item.name}</h4>
+          <p>Role: {item.role}</p>
+        </div>
+      );
+    });
 
     return (
       <section className="new-person-section">
